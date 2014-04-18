@@ -7,18 +7,111 @@
 \usepackage{graphicx}
 \usepackage{array} % To make a nice table
 \usepackage{booktabs} % To thicken table lines
+\usepackage{subcaption} %subplots
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 \newcolumntype{M}[1]{>{\raggedright}m{#1}} 
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \begin{document}
-
+\begin{center}
     \begin{tabular}{M{8cm}|M{8cm}}
     \toprule
-    Student Name: Joumaa Joffrey & Email: joffrey.joumaa@cebc.cnrs.fr  \tabularnewline \midrule
-    PhD Title: Austral elephant seal: optimization of transport cost, for a stealth deep diving predator & Universities \& Labs: Centre d’Etudes Biologiques de Chizé (CEBC), La Rochelle University, France  Sea Mammal Research Unit (SMRU), St Andrews University, Scotland \tabularnewline \midrule
-    Fr   Supervisor: Christophe Guinet & UK   Supervisor: Patrick Miller \tabularnewline \midrule
-    Report   Number: 1 & PhD Start Date: 15/10/2013  \\
-    PhD Submission Deadline: 15/10/2016 \tabularnewline \midrule
-    DGA   PoC: Carole Nahum & Dstl   PoC: Duncan Williams \tabularnewline \bottomrule
+    \textbf{Student Name:} Joumaa Joffrey & \textbf{Email:} \href{mailto:joffrey.joumaa@cebc.cnrs.fr}{joffrey.joumaa@cebc.cnrs.fr}  \tabularnewline \midrule
+    \textbf{PhD Title:} Austral elephant seal: optimization of transport cost, for a stealth deep diving predator & \textbf{Universities \& Labs:} Centre d’Etudes Biologiques de Chizé (CEBC), La Rochelle University, France  Sea Mammal Research Unit (SMRU), St Andrews University, Scotland \tabularnewline \midrule
+    \textbf{Fr Supervisor:} Christophe Guinet & \textbf{UK Supervisor:} Patrick Miller \tabularnewline \midrule
+    \textbf{Report Number:} 1 & \textbf{PhD Start Date:} 15/10/2013  \\
+    \textbf{PhD Submission Deadline:} 15/10/2016 \tabularnewline \midrule
+    \textbf{DGA PoC:} Carole Nahum & \textbf{Dstl PoC:} Duncan Williams \tabularnewline \bottomrule
     \end{tabular}
+\end{center}
+\paragraph{PhD Year}
+First year
+
+\paragraph{Agreement between the 2 Universities:} 
+As far as I know, it is the first collaboration between La Rochelle and St Andrews Universities on a PhD project. However, researchers from the SMRU are sometimes involve in some La Rochelle PhD projects and vice versa, like Christophe Guinet is with the St Andrews PhD student, Lauren Biermann. There are also several other research projects involving both universities. For instance, every year, people from the SMRU come in France to help for the deployment of tags on seals, in the Iroise Sea, as part of a lecturer’s project, Cécile Vincent 
+
+\paragraph{Abstract -- Short Summary of Research:}
+Elephant seals, major predators of the Southern Ocean, feed from Subtropical waters to Antarctic waters continually diving at deep depths (up to 2000 m), during long trips at sea of thousands kilometres (up to 16 000 km). These animals are able to successfully hunt into the darkness of deep water. Their main prey, myctophids (lantern fish) are anatomically able to hear and produce sounds as well as bioluminescence. The latter particularity would be related to conspecific and/or sexual identification and counter-illumination. In such an environment, elephant seal have developed excellent underwater visual and hearing abilities.
+
+At the travel scale, the objective of our work is to better understand how elephant seals use ocean currents and oceanographic structures on the meso-submeso scale (eddies and filaments) to locate their food resources. At the dive scale, because elephant seals have reduced visibility and do not have echolocation system, we want to test if they use sounds and bioluminescence emitted by their prey to locate them. We hypothesize the acoustic and light environment could influence hunting success, survival, and therefore demography of animals which can use this information. Unfortunately, the lack of knowledge related to bioacoustics and bioluminescence, due to technical difficulties, do not enable to fully exploit the possibilities offered by these disciplines in marine ecology. These questions are access with an innovative approach by simultaneously equipping elephant seals with: 
+	\begin{itemize}
+	\item An oceanographic beacon Argos-GPS fixed on the head that allows high-resolution sampling of temperature/salinity/fluorescence and to get a GPS position between each dives.
+	\item A 3-D accelerometer, paired with the Argos-GPS, to identify prey capture attempt or PCA (\textit{i.e.} detection of head and jaw movements, associated with prey capture, with three light sensors (Hamamatsu S2387 series photodiode) to detect bioluminescence events in front, above and behind the elephant seal, in particular to verify whether the elephant seal responds to bioluminescence events that precede capture prey attempts, or if bioluminescence is induced by the passage of the animal (detection on the top and the back of the elephant seal)
+	\item Finally an acoustic beacon (acousonde) to record 120 Go of acoustic data between 17 Hz and 9 kHz paired with pressure-acceleration-magnetometer recorders that allow on one hand to rebuild their dives in three dimensions and on the other, to record sound environment where elephant seals live. 
+	\end{itemize}
+So, from their data we would like to test if elephant seals localize sounds (vocals) produced by myctophids to locate their prey at the travel scale and if they use cry produced by other animals such as blue whales when they are feeding, to locate the most productive areas of the Southern Ocean.
+
+\paragraph{Presentation of first results:}
+3D trajectory reconstruction is access by using 3D accelerometer and 3D magnetometer. First of all, the intensity of gravity is extracted from acceleration data by using a low pass filter. Using this intensity of gravity, the pitch and the roll angle are calculated. The yaw angle is computed with the magnetometric data, and the others angle. 3D trajectory reconstruction can then be estimated, knowing the animal’s assiette (roll, pitch, raw) and the estimated velocity, by integration.
+
+The 3D trajectory of elephant seal underwater, allow us to investigate diving behaviour and more specifically predation behaviour in terms of course-alteration before a PCA. I used straightness index to infer these behaviours.
+\begin{equation*}
+\text{straightness index} = \frac{D}{L} = \frac{\|\overrightarrow{v}\|}{\sum_{t}{\|\overrightarrow{V_t}\|}}
+\end{equation*}
+
+D is the distance from the starting point to the located goal and L is the path length taken by the seal. Values range between 0 and 1. A value near 0 means the elephant seal had a very random trajectory whereas a value around 1 means the seal goes straight to a located point.\\
+
+
+The straightness index is calculated over a period of 30 seconds before a PCA. Preliminary analysis realize on a first individual seems to support a cluster with 2 groups. The increase of the number of groups does not seem to improve the classification \autoref{fig:Cluster}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.45]{C:/Users/joumaa.CEBC/Documents/Standrews/scrpt/cluster.png}
+\caption{Choice numbers of cluster} 
+\label{fig:Cluster} 
+\end{figure}
+
+The first group contains 16288 PCAs ($\sim 34\%$ of total PCA) with a mean straightness index of $0.57 \pm 0.13$ whereas the second represents 31596 PCAs ($\sim 66\%$ of total PCA) with a mean straightness index of $0.89 \pm 0.07$. 
+
+This preliminary result supports the hypothesis of a distinction of different type of PCAs. More analyses need to be done (more variables, more individual), but it seems to be two types of PCA. A first one, related to a straighter path, which could be interpreted as a passive approach. And another one, related to a more random path, which could be interpreted as a more active approach, maybe due to an active hunting. 
+
+In addition to these analyses, I went to St Andrews to work on seal’s acoustic stealth. For that purpose, we used tags deployed on the fieldwork \textit{i.e.} the acousondes, to measure sounds produced by seals swimming at different speeds in the SMRU’s pool. The acousondes were fixed on panels that prevent seals to come up to the surface \autoref{subfig:sealPool}. Seals were set onto water in the middle of one side of the pool. They were trained to swim from the middle to the feeders located on both sides of the pool. It is during this travel that we have recorded sounds when seals passed in front of the acousondes.
+Preliminary analyses suggest that seals are moving underwater without emitting any detectable sounds \autoref{subfig:sealSpectro}. However, few recordings show some acoustic events \autoref{subfig:sealZoom} when the animal is swimming near the acousondes. We have to be careful with these events and check if it is not due to the seal touching the acousonde. 
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[h]{.3\textwidth}
+		\includegraphics[width=\textwidth]{C:/Users/joumaa.CEBC/Pictures/seal.png}
+		\caption{Seal in the pool with an acousonde} 
+		\label{subfig:sealPool} 
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{.3\textwidth}
+		\includegraphics[width=\textwidth]{C:/Users/joumaa.CEBC/Documents/Standrews/aco/2014-03-28/A033/A033-2014-03-28-1516.png}
+		\caption{Spectrogram of the recording period (30 min)}
+		\label{subfig:sealSpectro}
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{.3\textwidth}
+		\includegraphics[width=\textwidth]{C:/Users/joumaa.CEBC/Pictures/signal.png}
+		\caption{Zoom in the spectrogram when the seal is passing near the acousonde}
+		\label{subfig:sealZoom}		
+	\end{subfigure}
+	\caption{Choice numbers of cluster} 
+
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{C:/Users/joumaa.CEBC/Pictures/graph.png}
+\caption{Bottom duration vs. diving depth for different ranges of body density} 
+\label{fig:graph} 
+\end{figure}
+
+In parallel, I’m finishing a paper about the adjustment of diving behaviour with prey encounters and body density in southern elephant seals. Results showed that body density strongly influences bottom time, which is found to be the main foraging dive phase. Indeed, for negatively buoyant elephant seals, the fatter the animals are, the longer time they can stay at a given depth \autoref{fig:graph}. This behaviour seems to be explained by the swimming effort associated with the ascent phase. Cost of transport is more important for a higher body density than a lighter one, because of the higher effort to provide to come up to the surface.
+
+\paragraph{Issues/Problems preventing from achieving PhD Targets:} 
+Nothing has prevented from achieving targets set during these first six months.
+
+\paragraph{Future Research Activities:}
+	\begin{itemize}
+	\item
+To keep working on the distinction of different types of PCA based on animal’s behaviour. More animals will be included in the analyses as well as more parameters like the pitch angle and the swimming effort. Instead of using a time-window of 30 seconds preceding PCA to average parameters allowing the classification, a distance-window of 20 meters around the PCA will be used to give the same weight of trajectory data. The second step of this analysis will be to relate this PCA classification with bioluminescent and/or acoustic events. The idea is then to identify if these events are the cause or the consequence of the passage of the animal and to better understand predation behaviour associated.
+	\item
+To characterize acoustic environment of elephant seals during passive drift phase in drift dive and to detect acoustic events when the animals stop moving in dives. This should be done by using signal processing methods to identify these events which, perhaps, could be related to others species. 
+	\item
+To analyse trajectory data in function of flow fields. We know that elephant seals shift preferentially along oceanic fronts. Two hypotheses have been formulated to interpret this behaviour. The first one is that fronts are a favourable habitat for fishing. The second one is that fronts could be used because they contribute in the passive transport of elephant seal. By using information about flow fields from MERCATOR 1/12 model and Lagrangian methods developed in IPSOS and KEOPS2 project, I hope to estimate the part of the passive transport (advected by ocean currents) and the active transport (active swimming) in the horizontal movement.
+	\item
+To estimate impacts of ocean currents on the cost of transport in southern elephant seals. This work will be to quantify the energy cost of transport from information about mechanical work due to the propulsion (amplitude and frequency of swimming stroke), but also from resistive forces which include drag force and buoyancy.
+	\end{itemize}
 
 \end{document}
