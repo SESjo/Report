@@ -5,22 +5,20 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{array} % To make a nice table
+\usepackage{booktabs} % To thicken table lines
+\newcolumntype{M}[1]{>{\raggedright}m{#1}} 
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \begin{document}
-\begin{tabular}{|c|c|}
-\hline 
-Student Name: Joumaa Joffrey & Email: joffrey.joumaa@cebc.cnrs.fr \\ 
-\hline 
-PhD Title: Austral elephant seal: optimization of transport cost, for a stealth deep diving predator & Universities  Labs: Centre d’Etudes Biologiques de Chizé (CEBC), La Rochelle University, FranceSea Mammal Research Unit (SMRU), St Andrews University, Scotland
- \\ 
-\hline 
-Fr Supervisor: Christophe Guinet & UK Supervisor: Patrick Miller \\ 
-\hline 
-Report Number: 1 & PhD Start Date: 15/10/2013
-PhD Submission Deadline: 15/10/2016
- \\ 
-\hline 
-DGA PoC: Carole Nahum & Dstl PoC: Duncan Williams \\ 
-\hline 
-\end{tabular} 
+
+    \begin{tabular}{M{8cm}|M{8cm}}
+    \toprule
+    Student Name: Joumaa Joffrey & Email: joffrey.joumaa@cebc.cnrs.fr  \tabularnewline \midrule
+    PhD Title: Austral elephant seal: optimization of transport cost, for a stealth deep diving predator & Universities \& Labs: Centre d’Etudes Biologiques de Chizé (CEBC), La Rochelle University, France  Sea Mammal Research Unit (SMRU), St Andrews University, Scotland \tabularnewline \midrule
+    Fr   Supervisor: Christophe Guinet & UK   Supervisor: Patrick Miller \tabularnewline \midrule
+    Report   Number: 1 & PhD Start Date: 15/10/2013  \\
+    PhD Submission Deadline: 15/10/2016 \tabularnewline \midrule
+    DGA   PoC: Carole Nahum & Dstl   PoC: Duncan Williams \tabularnewline \bottomrule
+    \end{tabular}
+
 \end{document}
